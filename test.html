@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head>
+<body>
+
+
+<script type="text/javascript">
+//去哪儿2015笔试第二题
+//‘a2b2cd5’->'aabbcdcdcdcdcd';
+function getStr (str){
+	var rStr = '';
+	var reg = /([a-zA-Z]+)([0-9]+)/g;
+    var result = reg.exec(str);
+    while(result){
+    	var char = result[1];
+    	var num = result[2];
+
+    	for(var i = 0;i<num;i++){
+    		rStr += char;
+    	}
+    	result = reg.exec(str);
+    }
+    return rStr;
+}
+</script>
+    
+</body>
+</html>
