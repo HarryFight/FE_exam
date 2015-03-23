@@ -28,6 +28,34 @@ function getStr (str){
     }
     return rStr;
 }
+
+// 腾讯2013笔试题—web前端开发附加题1：
+// 编写一个javascript的函数把url解析为与页面的javascript.location对象相似的实体对象，如：url ：'http://www.qq.com/index.html?key1=1&key2=2'，最后输出的对象是：
+// {
+//     protocol: "http", 
+//     hostname: "www.qq.com", 
+//     pathname: "index.html", 
+//     query: "key1=1&key2=2"
+// }
+
+function getParam(url){
+    var mylocation={
+        'protocol':'',
+        'hostname':'',
+        'pathname':'',
+        'query':''
+    }
+
+    var str = url.split('://');
+    mylocation.protocol = str[0];
+    var arr = str[1].split(/[\/\?]/g);
+    mylocation.hostname = arr[0];
+    mylocation.pathname = arr[1];
+    mylocation.query = arr[2];
+
+    return mylocation;
+}
+
 </script>
     
 </body>
