@@ -56,6 +56,21 @@ function getParam(url){
     return mylocation;
 }
 
+//对象深度克隆的写法
+function deepClone(obj){
+    //新建空对象或数组
+    var o = Obj.constructor == 'Array'? [] :{};
+    for(var i in obj){
+        //判断obj的属性当中，如果是引用类型则进行递归，否则赋值
+        if(obj.hasOwnProperty(i)){
+            o[i] = typeof obj[i] == 'object' ? deepClone(obj[i]) : obj[i];
+        }
+    }
+
+    return o;
+}
+
+
 </script>
     
 </body>
